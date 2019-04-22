@@ -1,0 +1,1082 @@
+/* You can add global styles to this file, and also import other style files */
+html {
+  scroll-behavior: smooth;
+}
+body {
+  padding: 0;
+  margin: 0;
+  line-height: 1.5;
+  font-family: "Circular Std Book";
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  padding: 0;
+  margin: 0;
+}
+img {
+  max-width: 100%;
+}
+a:hover {
+  text-decoration: none;
+}
+ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+@font-face {
+  font-family: "Circular Std";
+  src: url("./assets/fonts/CircularStd-MediumItalic.woff2") format("woff2"),
+    url("./assets/fonts/CircularStd-MediumItalic.woff") format("woff");
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Circular Std Book";
+  src: url("./assets/fonts/CircularStd-Book.woff2") format("woff2"),
+    url("./assets/fonts/CircularStd-Book.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Circular Std";
+  src: url("./assets/fonts/CircularStd-Bold.woff2") format("woff2"),
+    url("./assets/fonts/CircularStd-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Circular Std Book";
+  src: url("./assets/fonts/CircularStd-BookItalic.woff2") format("woff2"),
+    url("./assets/fonts/CircularStd-BookItalic.woff") format("woff");
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Circular Std";
+  src: url("./assets/fonts/CircularStd-BoldItalic.woff2") format("woff2"),
+    url("./assets/fonts/CircularStd-BoldItalic.woff") format("woff");
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Circular Std";
+  src: url("./assets/fonts/CircularStd-Medium.woff2") format("woff2"),
+    url("./assets/fonts/CircularStd-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Circular Std";
+  src: url("./assets/fonts/CircularStd-BlackItalic.woff2") format("woff2"),
+    url("./assets/fonts/CircularStd-BlackItalic.woff") format("woff");
+  font-weight: 900;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Circular Std";
+  src: url("./assets/fonts/CircularStd-Black.woff2") format("woff2"),
+    url("./assets/fonts/CircularStd-Black.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+}
+/* Body CSS End */
+
+/*--- Header CSS Satrt ---*/
+.wrapper {
+  background: #fff;
+}
+.header {
+  background: rgba(127, 99, 244, 0.24);
+  position: fixed;
+  width: 100%;
+  z-index: 160;
+  height: 80px;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.weather-title {
+  width: 320px;
+  height: 80px;
+  background: #7f63f4;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.weather-title h3 {
+  font-size: 26px;
+  font-weight: 400;
+  color: #fff;
+  margin-bottom: 0;
+  line-height: 1.3;
+}
+.log-out {
+  padding-right: 60px;
+}
+.log-out a {
+  font-size: 19px;
+  font-weight: 400;
+  color: #000000;
+  line-height: 1.3;
+  font-family: "Montserrat", sans-serif;
+}
+.log-out img {
+  margin-right: 10px;
+}
+
+.menu-btn {
+  transition: 0.5s all ease;
+}
+.menu-btn span {
+  width: 21px;
+  height: 2px;
+  background: #242e3a;
+  border-radius: 1px;
+  margin-bottom: 5px;
+  display: block;
+}
+.menu-btn span:last-child {
+  margin-bottom: 0;
+}
+.menu-btn.show span:nth-child(1) {
+  -webkit-transform: rotate(-50deg) translate(-5px, 8px);
+  transform: rotate(-50deg) translate(-2px, 6px);
+  transition: 0.5s all ease;
+}
+
+.menu-btn.show span:nth-child(2) {
+  opacity: 0;
+  transition: 0.5s all ease;
+}
+
+.menu-btn.show span:nth-child(3) {
+  -webkit-transform: rotate(47deg) translate(-5px, -8px);
+  transform: rotate(47deg) translate(-4px, -9px);
+  transition: 0.5s all ease;
+}
+.header-menu {
+  position: relative;
+}
+
+/*--- Header CSS End ---*/
+
+.sidebar {
+  max-width: 320px;
+  width: 100%;
+  position: fixed;
+  left: 0;
+  top: 80px;
+  background: #ffffff;
+  padding: 30px 0;
+  overflow: auto;
+  height: 100%;
+  -webkit-box-shadow: 2px 0px 3px 0px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 2px 0px 3px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 0px 3px 0px rgba(0, 0, 0, 0.2);
+  z-index: 100;
+}
+
+.navbar,
+.sidebar .navbar-nav {
+  display: block;
+  padding: 0;
+  width: 100%;
+}
+.sidebar .navbar .navbar-nav li a {
+  font-size: 16px;
+  line-height: 18px;
+  font-weight: 400;
+  color: #6a707e;
+  text-transform: capitalize;
+  padding: 17px 20px 17px 30px;
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  transition: 0.4s all ease;
+}
+.sidebar .navbar .navbar-nav li a:hover {
+  background: rgba(127, 99, 244, 0.1);
+  color: #7f63f4;
+  transition: 0.4s all ease;
+}
+.sidebar .navbar .navbar-nav li a:hover:before {
+  content: "";
+  width: 3px;
+  height: 100%;
+  background: #7f63f4;
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: inline-block;
+  transition: 0.4s all ease;
+}
+.sidebar .dropdown-toggle::after {
+  position: absolute;
+  right: 20px;
+  top: 25px;
+  font-size: 18px;
+}
+/*--- Sidebar CSS End ---*/
+
+/*--- Weather Wrap CSS Start --*/
+.weather-wrap {
+  max-width: 1430px;
+  padding: 120px 0 50px 50px;
+  margin: 0 auto;
+  margin-left: 320px;
+}
+.btns-list ul {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-left: auto;
+  margin-bottom: 30px;
+}
+
+.welcome-box {
+  background: #7f63f4;
+  padding: 25px 30px;
+  border-radius: 4px;
+  text-align: center;
+}
+.welcome-box h5 {
+  font-size: 19px;
+  line-height: 1.3;
+  color: #fff;
+  font-weight: 700;
+  font-family: "Circular Std";
+  margin-bottom: 40px;
+}
+.welcome-box p {
+  font-size: 14px;
+  color: #fff;
+  line-height: 1.8;
+  padding: 0 30px;
+  margin-bottom: 30px;
+}
+
+.wc-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  padding-top: 10px;
+}
+.temperature {
+  font-size: 22px;
+  font-weight: 500;
+  color: #fff;
+  line-height: 1.3;
+  font-family: "Circular Std";
+}
+.temperature img {
+  margin-bottom: 10px;
+  margin-right: 5px;
+}
+.deg {
+  position: absolute;
+  right: 4px;
+  font-size: 14px;
+  color: #fff;
+  font-weight: 400;
+  line-height: 1.3;
+  top: -1px;
+}
+.deg:before {
+  content: "";
+  background: url(./assets/images/deg.png) center center no-repeat;
+  width: 3px;
+  height: 3px;
+  position: absolute;
+  left: -2px;
+  top: -6px;
+}
+.wc-bottom .deg:nth-child(2) {
+  right: 40px;
+}
+/*--- Weather Wrap CSS End --*/
+
+.slideThree {
+  width: 60px;
+  height: 26px;
+  background: #fff;
+  position: relative;
+  border-radius: 50px;
+}
+.slideThree label {
+  display: block;
+  width: 22px;
+  height: 22px;
+  cursor: pointer;
+  position: absolute;
+  top: 2.3px;
+  left: 2px;
+  z-index: 1;
+  background: #7f63f4;
+  border-radius: 50px;
+  transition: all 0.4s ease;
+}
+.slideThree input[type="checkbox"] {
+  visibility: hidden;
+}
+.slideThree input[type="checkbox"]:checked + label {
+  left: 37px;
+}
+
+.today-report {
+  padding: 25px 50px;
+  background: #fff;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.2);
+}
+.repo-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+.today-report h4 {
+  font-size: 18px;
+  font-weight: 400;
+  color: #6a707e;
+}
+.today-report span {
+  color: #6a707e;
+}
+.today-report h1 {
+  font-size: 70px;
+  font-weight: 500;
+  color: #7f63f4;
+  line-height: 1;
+  margin-bottom: 0;
+  font-family: "Circular Std";
+}
+/* .today-report h1:after {
+  content: "o";
+  font-size: 36px;
+} */
+.today-report .icon {
+  display: inline-block;
+  vertical-align: middle;
+}
+.today-report img {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.deg-list {
+  display: flex;
+}
+li {
+  list-style-type: none;
+}
+.deg-list li {
+  width: 25%;
+  text-align: center;
+}
+.deg-list h3 {
+  font-size: 20px;
+  font-weight: 400;
+  margin-bottom: 33px;
+  color: #6a707e;
+}
+.deg-list img {
+  margin-bottom: 33px;
+}
+.deg-list span {
+  display: block;
+  padding-bottom: 33px;
+}
+
+.city-list {
+  background: #fff;
+}
+.city-list li {
+  padding: 15px 25px;
+  -webkit-box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.15);
+  margin-bottom: 11px;
+  border-radius: 3px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.city-list li h4 {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1;
+  color: #6a707e;
+  margin-left: 0;
+}
+.city-list h3 {
+  font-size: 24px;
+  line-height: 1;
+  font-weight: 500;
+  font-family: "Circular Std";
+  position: relative;
+}
+.city-list h3:after {
+  content: "o";
+  position: absolute;
+  right: 18px;
+  font-size: 17px;
+  top: 5px;
+}
+.city-list span {
+  padding-left: 10px;
+  display: inline-block;
+}
+.city-list li:first-child h3:after {
+  content: none;
+}
+.city-list li:nth-child(2) h3 {
+  color: #f89317;
+}
+.city-list li:nth-child(3) h3 {
+  color: #32ccfd;
+}
+.city-list li:nth-child(4) h3 {
+  color: #67db50;
+}
+.city-list li:nth-child(5) h3 {
+  color: #ffbe26;
+}
+.city-list li:nth-child(6) h3 {
+  color: #53a6fa;
+}
+
+/*-- Toggle Btn CSS Start --*/
+
+.btn-toggle {
+  text-align: center;
+  width: 30px;
+  position: fixed;
+  z-index: 110;
+  display: none;
+  top: 115px;
+  left: 12px;
+  position: fixed;
+  transition: 0.5s all ease;
+}
+.btn-toggle.side {
+  left: 8px;
+}
+.btn-toggle.team {
+  right: 8px;
+  left: auto;
+}
+.btn-toggle span {
+  display: block;
+  width: 30px;
+  height: 3px;
+  background: #6a707e;
+  margin-bottom: 6px;
+}
+.btn-toggle span.label {
+  width: auto;
+  height: auto;
+  background: transparent;
+  font-size: 12px;
+  line-height: 14px;
+  font-weight: 700;
+  color: #abafb3;
+  text-transform: uppercase;
+  display: block;
+  font-family: "Circular Std";
+  margin: 0;
+}
+.btn-toggle.show span:nth-child(1) {
+  -webkit-transform: rotate(-50deg) translate(-5px, 8px);
+  transform: rotate(-50deg) translate(-5px, 8px);
+  transition: 0.5s all ease;
+}
+.btn-toggle.show span:nth-child(2) {
+  opacity: 0;
+  transition: 0.5s all ease;
+}
+.btn-toggle.show span:nth-child(3) {
+  -webkit-transform: rotate(47deg) translate(-5px, -8px);
+  transform: rotate(47deg) translate(-5px, -8px);
+  transition: 0.5s all ease;
+}
+/*-- Toggle Btn CSS End --*/
+
+.weather-report {
+  -webkit-box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.1);
+}
+.weather-report .wr-top {
+  padding: 20px 35px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.wr-top .weather-info {
+  text-align: left;
+  width: 45%;
+}
+.weather-report p.dayreport {
+  font-size: 16px;
+  line-height: 48px;
+  color: #6a707e;
+  text-transform: capitalize;
+  font-weight: 400;
+  padding-bottom: 0;
+}
+.weather-info .wr-content {
+  display: flex;
+  align-items: flex-start;
+}
+.wr-content .wr-img {
+  margin-right: 22px;
+  max-width: 130px;
+}
+.wr-content .wr-img img {
+  width: 100%;
+}
+.wr-content .wr-result {
+  padding-top: 19px;
+  padding-top: 19px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.wr-content .wr-result h2 {
+  width: 100%;
+  font-size: 55px;
+  line-height: 62px;
+  color: #6a707e;
+  text-transform: uppercase;
+  font-weight: 400;
+  padding-bottom: 20px;
+  font-family: "Circular Std";
+  position: relative;
+}
+.wr-content .wr-result h3 {
+  width: 50%;
+  font-size: 37px;
+  line-height: 43px;
+  text-transform: uppercase;
+  font-weight: 400;
+  padding-bottom: 20px;
+  font-family: "Circular Std";
+  position: relative;
+}
+.wr-content .wr-result h3 span,
+.wr-content .wr-result h2 span {
+  padding-left: 15px;
+  display: inline-block;
+}
+
+.wr-content .wr-result h3:after,
+.wr-content .wr-result h2:after {
+  content: "o";
+  right: 64px;
+  top: 6px;
+  position: absolute;
+  font-size: 18px;
+}
+.wr-content .wr-result h2:after {
+  right: 166px;
+}
+
+.wr-content .wr-result h3:first-child::after {
+  content: "";
+  display: inline-block;
+  width: 1px;
+  background: #abafb3;
+  height: 50px;
+  margin: 0 26px;
+}
+.wr-content .wr-result h3.text-blue {
+  color: #32ccfd;
+}
+.wr-content .wr-result h3.text-blue:before {
+  content: "";
+  width: 1px;
+  height: 50px;
+  position: absolute;
+  display: inline-block;
+  right: 16px;
+  background: rgba(171, 175, 179, 0.5);
+}
+.wr-content .wr-result h3.text-orange {
+  color: #f89317;
+}
+
+.weather-descript .wd-blog-section {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.weather-descript {
+  text-align: right;
+  width: 55%;
+}
+
+.weather-descript .wd-blog {
+  display: flex;
+  align-items: center;
+  width: 33.33%;
+  text-align: left;
+  padding: 0 10px 38px 0;
+}
+
+.wd-blog .wd-blg-img {
+  margin-right: 10px;
+  max-width: 35px;
+}
+
+.wd-blog .wd-blg-info {
+  text-align: left;
+}
+
+.wd-blog .wd-blg-info h6 {
+  font-size: 16px;
+  font-weight: 400;
+  line-break: 22px;
+  color: #6a707e;
+  font-family: "Circular Std Book";
+  padding-bottom: 5px;
+}
+
+.wd-blog .wd-blg-info p {
+  font-size: 13px;
+  font-weight: 400;
+  line-break: 20px;
+  color: #abafb3;
+  font-family: "Circular Std Book";
+  margin: 0px;
+}
+
+.weather-descript .wd-detail {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+}
+.wd-detail .wd-detail-img {
+  margin-right: 7px;
+  max-width: 32px;
+}
+
+.wd-detail .wd-detail-text {
+  font-size: 15px;
+  font-weight: 400;
+  line-break: 23px;
+  color: #abafb3;
+  text-align: justify;
+  font-family: "Circular Std Book";
+}
+
+.weather-report .wr-bottom {
+  background: #7f63f4;
+  padding: 20px 42px 27px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.wr-bottom .weekly-report {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+.weekly-report h6 {
+  font-size: 16px;
+  font-weight: 400;
+  line-break: 22px;
+  color: #fff;
+  font-family: "Circular Std Book";
+  padding-bottom: 5px;
+}
+.weekly-report .weekly-report-info {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.weekly-report-info .wri-img {
+  max-width: 32px;
+  margin-right: 12px;
+}
+
+.weekly-report-info .wri-detail {
+  color: #fff;
+  line-height: 18px;
+}
+.weekly-report-info .wri-detail p {
+  font-size: 16px;
+  font-weight: 400;
+  line-break: 22px;
+  color: #fff;
+  font-family: "Circular Std Book";
+  text-transform: capitalize;
+  margin: 0px;
+}
+.weekly-report-info .wri-detail p {
+  font-size: 16px;
+  font-weight: 400;
+  line-break: 18px;
+  color: #fff;
+  font-family: "Circular Std Book";
+  text-transform: capitalize;
+}
+.weekly-report-info .wri-detail span {
+  font-size: 12px;
+}
+
+/* weather report css ends */
+
+/* login page start */
+.login-wrap {
+  background: url(./assets/images/login_bg.png) center center no-repeat;
+  background-size: cover;
+  padding: 140px 0px;
+}
+.container {
+  max-width: 1600px;
+  padding: 0px 15px;
+  margin: 0 auto;
+}
+.login-wrap .login {
+  background: url(./assets/images/login.png) center center no-repeat;
+  background-size: 100% 100%;
+  border-radius: 5px;
+  padding: 170px 0px;
+  text-align: center;
+  max-width: 1600px;
+  margin: 0 auto;
+  text-align: center;
+}
+.login-wrap .login h1 {
+  text-transform: uppercase;
+  font-family: Circular Std;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 54px;
+  margin-bottom: 67px;
+  color: #ffffff;
+  font-family: "Circular Std";
+}
+.select-city .login h1 {
+  text-transform: unset;
+}
+.login-wrap .login form {
+  max-width: 896px;
+  margin: 0 auto;
+  width: 58%;
+}
+
+.login-wrap .login form input,
+.select-city .login form select {
+  width: 100%;
+  height: 70px;
+  border-radius: 8px;
+  border: 1px solid #bcbcbc;
+  padding: 12px 26px;
+  font-size: 18px;
+  line-height: 24px;
+  color: #7a7a7a;
+  font-family: "Circular Std Book";
+}
+.select-city .login form select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: url(./assets/images/caret-down.png) 98% no-repeat;
+  background-color: #fff;
+}
+
+.login-wrap .login form input:first-child {
+  margin-bottom: 10px;
+}
+.login-wrap .login form > input:last-child {
+  margin-top: 10px;
+  font-size: 30px;
+  color: #ffffff;
+  max-width: 328px;
+  border-radius: 3px;
+  border: none;
+  background: #7f63f4;
+  text-transform: capitalize;
+  font-family: "Circular Std";
+  font-weight: 700;
+}
+
+.login-wrap .login form input::placeholder {
+  color: #7a7a7a;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 400;
+  text-transform: capitalize;
+  font-family: "Circular Std Book";
+}
+/* login page end */
+
+/*--- Footer CSS Start ---*/
+.footer {
+  background: #fff;
+  padding: 30px 0;
+  z-index: 1;
+  position: relative;
+  text-align: center;
+  border-top: 1px solid #d9d9d9;
+}
+.footer p {
+  font-size: 16px;
+  font-weight: 400;
+  color: #898989;
+  margin-bottom: 0;
+  line-height: 1.2;
+}
+.footer p a {
+  color: #7f63f4;
+}
+
+.clickable {
+  cursor: pointer;
+}
+.invalid-feedback {
+  font-size: 30px;
+}
+/*--- Footer CSS End ---*/
+
+/*--- Responsive Start ---*/
+@media (max-width: 1700px) {
+  .sidebar,
+  .weather-title {
+    max-width: 270px;
+  }
+  .weather-wrap {
+    margin-left: 270px;
+  }
+  .welcome-box {
+    padding: 25px 15px;
+  }
+
+  /*--- Login Page Start ---*/
+  .login-wrap .login {
+    padding: 50px 0px;
+  }
+  .login-wrap .login form {
+    width: 70%;
+  }
+  .weather-wrap {
+    padding: 120px 15px 30px 30px;
+  }
+  .wr-content .wr-result {
+    max-width: 160px;
+  }
+  .wr-content .wr-result h2 {
+    font-size: 40px;
+  }
+  .wr-content .wr-result h3 {
+    font-size: 24px;
+  }
+  .wr-content .wr-result h3:after,
+  .wr-content .wr-result h2:after {
+    right: 39px;
+    font-size: 14px;
+  }
+  .wr-content .wr-result h2:after {
+    right: 103px;
+  }
+  .welcome-box p {
+    padding: 0;
+  }
+}
+
+@media (max-width: 1440px) {
+  .wr-content .wr-result h3:after,
+  .wr-content .wr-result h2:after {
+    right: 32px;
+    top: 3px;
+  }
+  .wr-content .wr-result h2:after {
+    right: 86px;
+  }
+  .wr-content .wr-result h3.text-blue:before {
+    right: 5px;
+  }
+  .today-report span {
+    font-size: 14px;
+  }
+  .weather-report .wr-bottom {
+    padding: 20px 25px 27px;
+  }
+  .weekly-report-info .wri-img {
+    margin-right: 5px;
+  }
+}
+
+@media (max-width: 1366px) {
+  .weather-info .wr-content {
+    display: block;
+  }
+  .wr-result {
+    max-width: 100%;
+  }
+  .wr-content .wr-result h3:after,
+  .wr-content .wr-result h2:after {
+    right: 39px;
+    top: 3px;
+  }
+  .wr-content .wr-result h2:after {
+    right: 106px;
+  }
+  .today-report {
+    height: 100%;
+  }
+}
+
+@media (max-width: 1199px) {
+  .sidebar {
+    left: -330px;
+    z-index: 100;
+    transition: 0.5s all ease;
+  }
+  .sidebar.show {
+    left: 0;
+  }
+  .btn-toggle.side {
+    display: block;
+  }
+  .weather-wrap {
+    margin-left: 0;
+  }
+  .dashboard-main {
+    padding: 140px 20px 200px 40px;
+    margin: 0 350px 0 0;
+  }
+  .personal-dash {
+    margin-left: 0;
+  }
+  .btn-toggle {
+    top: 90px;
+  }
+
+  .profile-form {
+    margin: 0;
+  }
+  .dashboard-main.profile .member-profile {
+    margin: 0 5px;
+  }
+
+  /*--- Login Page Start ---*/
+  .login-wrap {
+    padding: 130px 0px;
+  }
+  .login-wrap .login {
+    padding: 90px 0px;
+  }
+  .login-wrap .login form {
+    width: 70%;
+  }
+  .login-wrap .login h1 {
+    font-size: 44px;
+  }
+  .login-wrap .login form input:last-child {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 991px) {
+  .logo img {
+    margin-right: 10px;
+  }
+  .navbar-light .navbar-toggler {
+    display: none;
+  }
+  .navbar-light .navbar-collapse {
+    display: block;
+  }
+  .btn-toggle.team {
+    display: block;
+  }
+  .team-bar {
+    right: -380px;
+    transition: 0.5s all ease;
+  }
+
+  /*--- Login Page Start ---*/
+  .login-wrap .login form {
+    width: 80%;
+  }
+  .login-wrap .login form input:first-child {
+    margin-bottom: 17px;
+  }
+  .login-wrap .login h1 {
+    margin-bottom: 57px;
+    font-size: 38px;
+  }
+  .login-wrap .login form input:last-child {
+    font-size: 24px;
+  }
+  .login-wrap {
+    padding: 110px 0px;
+  }
+}
+
+@media (max-width: 767px) {
+  /*--- Login Page Start ---*/
+  .login-wrap {
+    padding: 90px 0px;
+  }
+  .login-wrap .login {
+    padding: 60px 0px;
+  }
+  .login-wrap .login form {
+    width: 90%;
+  }
+  .login-wrap .login form input:first-child {
+    margin-bottom: 30px;
+  }
+  .login-wrap .login form input {
+    height: 60px;
+  }
+  .login-wrap .login form input:last-child {
+    margin-top: 58px;
+    max-width: 278px;
+  }
+}
+
+@media (max-width: 480px) {
+  /*--- Login Page Start ---*/
+  .login-wrap .login h1 {
+    margin-bottom: 37px;
+    font-size: 30px;
+  }
+  .login-wrap .login form input:first-child {
+    margin-bottom: 25px;
+  }
+  .login-wrap .login form input {
+    height: 50px;
+  }
+  .login-wrap .login form input:last-child {
+    margin-top: 48px;
+    max-width: 208px;
+  }
+  .login-wrap .login form input:last-child {
+    font-size: 20px;
+  }
+}
+
+/*--- Responsive End ---*/

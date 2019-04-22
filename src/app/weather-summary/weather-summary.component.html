@@ -1,0 +1,122 @@
+<div class="weather-wrap">
+  <div class="btns-list">
+    <ul>
+      <li>
+        <a class="btn btn-primary" routerLink="/manage-cities">Add a City</a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="weather-summary-wrapper">
+    <!-- current city today report -->
+    <div class="">
+      <div class="today-report">
+        <div class="repo-head">
+          <h4><img src="assets/images/today-repo-icon1.png" />Today Report</h4>
+          <span
+            >{{ currentCityForecast?.city.name }},
+            {{ currentCityForecast?.city.country }}</span
+          >
+        </div>
+        <div class="row align-items-end">
+          <p *ngIf="currentCityForecast === undefined" class="alert alert-info">
+            Allow Browser location to see your city today weather report.
+          </p>
+          <div class="col-4">
+            <div class="today-deg">
+              <h1>{{ today?.main.temp }}</h1>
+              <div class="icon">
+                <img
+                  src="https://openweathermap.org/img/w/{{
+                    (today?.weather)[0].icon
+                  }}.png"
+                  alt=""
+                />
+              </div>
+              <span>{{ (today?.weather)[0].description }}</span>
+            </div>
+          </div>
+          <div class="col-8">
+            <div class="deg-list">
+              <li
+                *ngFor="
+                  let data of currentCityForecast?.list;
+                  let index = index
+                "
+              >
+                <span *ngIf="data.newDay">
+                  <h3>{{ data.dt_txt | date: "EEEE" }}</h3>
+                  <img
+                    src="https://openweathermap.org/img/w/{{
+                      data.weather[0].icon
+                    }}.png"
+                    alt=""
+                  />
+                  <span>{{ data.main.temp }}</span>
+                </span>
+              </li>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- loading template -->
+    <div class="my-container">
+      <ngx-loading [show]="loading"></ngx-loading>
+    </div>
+
+    <!-- display the message if there is no city selected -->
+    <div *ngIf="weatherData.length == 0" class="add-city-first">
+      <h2>
+        Kindly add cities to see its weather,
+        <a routerLink="/manage-cities">Add City</a>
+      </h2>
+    </div>
+
+    <!-- weather of selected cities table -->
+    <div *ngIf="weatherData.length > 0" class="selected-cities-weather">
+      <h1>Weather of selected cities</h1>
+      <table class="table weather-summary-table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">City Name</th>
+            <th scope="col">Current temperature</th>
+            <th scope="col">Expected high and low temperatures</th>
+            <th scope="col">Overcast state</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            class="selectable"
+            *ngFor="let city of weatherData; let index = index"
+            [routerLink]="['/city-details', city.name, city.id]"
+          >
+            <th scope="row">{{ index + 1 }}.</th>
+            <td>{{ city.name }}</td>
+            <td>{{ city.main.temp }}</td>
+            <td>
+              Low: {{ city.main.temp_min }} - High: {{ city.main.temp_max }}
+            </td>
+            <td>
+              <img
+                src="https://openweathermap.org/img/w/{{
+                  city.weather[0].icon
+                }}.png"
+                alt=""
+              />
+              {{ city.weather[0].description }}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="error-message">
+      <div *ngIf="errorMessage" class="alert alert-danger" role="alert">
+        {{ this.errorMessage }}
+      </div>
+    </div>
+  </div>
+</div>

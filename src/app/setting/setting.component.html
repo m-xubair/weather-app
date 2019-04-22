@@ -1,0 +1,33 @@
+<div class="weather-wrap">
+  <div class="select-temp">
+    <h1>Select Temperatures Format</h1>
+    <div class="form-check">
+      <input
+        class="form-check-input"
+        type="radio"
+        name="exampleRadios"
+        id="celcius"
+        value="metric"
+        [(ngModel)]="selectedUnit"
+        (change)="selectUnit()"
+      />
+      <label class="form-check-label" for="celcius">
+        Celcius
+      </label>
+    </div>
+    <div class="form-check">
+      <input
+        class="form-check-input"
+        type="radio"
+        name="exampleRadios"
+        id="fahrenheit"
+        value="imperial"
+        [(ngModel)]="selectedUnit"
+        (change)="selectUnit()"
+      />
+      <label class="form-check-label" for="fahrenheit">
+        Fahrenheit
+      </label>
+    </div>
+  </div>
+</div>

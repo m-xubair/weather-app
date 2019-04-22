@@ -1,0 +1,50 @@
+.weather-summary-table tbody tr:hover {
+  background: rgba(127, 99, 244, 0.24);
+  color: blue;
+}
+.selectable {
+  cursor: pointer;
+}
+.weather-wrap .btn-primary {
+  background: #7f63f4;
+  border-radius: 8px;
+  padding: 0;
+  border: 2px solid transparent;
+  height: 58px;
+  width: 177px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+  margin-left: 20px;
+  font-family: "Circular Std";
+}
+.weather-wrap .btn-primary:hover {
+  border: 2px solid #7f63f4;
+  background: transparent;
+  color: #7f63f4;
+}
+.add-city-first {
+  text-align: center;
+  padding-top: 40px;
+}
+.error-message {
+  text-align: center;
+  width: 80%;
+  margin-left: 98px;
+  margin-top: 20px;
+}
+
+.selected-cities-weather h1 {
+  text-align: center;
+  margin: 50px 0 10px 0;
+}
+.alert.alert-info {
+  text-align: center;
+  margin-left: 200px;
+}
+.weather-summary-table td img {
+  height: 37px;
+}

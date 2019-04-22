@@ -1,0 +1,58 @@
+<div class="weather-wrap">
+  <div class="add-remove-city-wrapper row">
+    <!-- add/remove city -->
+    <div class="add-remove-city col-12">
+      <h1>Add / Remove City</h1>
+      <div class="city-name-input">
+        <label for="city-name">Enter city name you want to add or remove</label>
+        <div>
+          <input type="text" id="city-name" [(ngModel)]="city" />
+        </div>
+      </div>
+      <div class="display-messages">
+        <div *ngIf="errorMessage" class="alert alert-danger">
+          {{ errorMessage }}
+        </div>
+        <div *ngIf="successMessage" class="alert alert-success">
+          {{ successMessage }}
+        </div>
+      </div>
+      <div class="buttons">
+        <button class="btn btn-primary" [disabled]="!city" (click)="addCity()">
+          Add City
+        </button>
+        <button
+          class="btn btn-danger"
+          [disabled]="!city"
+          (click)="removeCity()"
+        >
+          Remove City
+        </button>
+      </div>
+    </div>
+
+    <!-- selected cities table -->
+    <div class="selected-cities col-6">
+      <h1>Selected Cities</h1>
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">City Name</th>
+            <th scope="col">Country Name</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            class="selectable"
+            *ngFor="let city of selectedCities; let index = index"
+          >
+            <th scope="row">{{ index + 1 }}.</th>
+            <td>{{ city.name }}</td>
+            <td>{{ city.country }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

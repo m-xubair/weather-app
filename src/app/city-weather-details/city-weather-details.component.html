@@ -1,0 +1,56 @@
+<div class="weather-wrap">
+  <div class="coty-details-wrapper">
+    <h1>5 days weather forecast - {{ cityName }}</h1>
+
+    <!-- loading template -->
+    <div class="my-container">
+      <ngx-loading [show]="loading"></ngx-loading>
+    </div>
+
+    <!-- 5 days forcast table -->
+    <table class="table coty-details-table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Day of week</th>
+          <th scope="col">Time</th>
+          <th scope="col">Current temperature</th>
+          <th scope="col">Expected high and low temperatures</th>
+          <th scope="col">Overcast state</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          class="selectable"
+          *ngFor="let data of weatherData; let index = index"
+        >
+          <div *ngIf="data.newDay; else elseBlock">
+            <td>{{ data.dt_txt | date: "EEEE" }}</td>
+          </div>
+          <ng-template #elseBlock>
+            <td></td>
+          </ng-template>
+          <td>{{ data.dt_txt | date: "h:mm a" }}</td>
+          <td>{{ data.main.temp }}</td>
+          <td>
+            Low: {{ data.main.temp_min }} - High: {{ data.main.temp_max }}
+          </td>
+          <td>
+            <img
+              src="https://openweathermap.org/img/w/{{
+                data.weather[0].icon
+              }}.png"
+              alt=""
+            />
+            {{ data.weather[0].description }}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="error-message">
+      <div *ngIf="errorMessage" class="alert alert-danger" role="alert">
+        {{ this.errorMessage }}
+      </div>
+    </div>
+  </div>
+</div>

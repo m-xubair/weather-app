@@ -1,0 +1,57 @@
+<div class="wrapper">
+  <div class="content">
+    <div class="login-wrap">
+      <div class="container">
+        <div class="login">
+          <h1>login</h1>
+          <form [formGroup]="loginForm" (ngSubmit)="login()">
+            <div class="form-group">
+              <input
+                type="email"
+                class="form-control"
+                name="email1"
+                formControlName="email"
+                aria-describedby="emailHelp"
+                placeholder="Enter email"
+              />
+              <div
+                *ngIf="(email.dirty || email.touched) && email.invalid"
+                class="invalid-feedback"
+              >
+                <div *ngIf="email.errors.required">Email is required</div>
+                <div *ngIf="email.errors.email">
+                  Email must be a valid email address
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <input
+                type="password"
+                class="form-control"
+                name="password"
+                formControlName="password"
+                placeholder="Password"
+              />
+              <div
+                *ngIf="(password.dirty || password.touched) && password.invalid"
+                class="invalid-feedback"
+              >
+                <div *ngIf="password.errors.required">Password is required</div>
+              </div>
+            </div>
+            <div class="error-message">
+              <div *ngIf="errorMessage" class="alert alert-danger" role="alert">
+                {{ this.errorMessage }}
+              </div>
+            </div>
+            <input
+              type="submit"
+              [disabled]="loginForm.invalid"
+              value="submit"
+            />
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

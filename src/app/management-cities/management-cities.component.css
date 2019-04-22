@@ -1,0 +1,29 @@
+.add-remove-city {
+  text-align: center;
+}
+.city-name-input label {
+  font-weight: 700;
+}
+.city-name-input input {
+  width: 350px;
+}
+.city-name-input {
+  padding: 10px 0;
+}
+.display-messages {
+  padding-top: 5px;
+}
+.buttons button {
+  margin-right: 5px;
+}
+.selected-cities {
+  text-align: center;
+  margin-left: 25%;
+  margin-top: 40px;
+}
+.selected-cities h1 {
+  text-align: center;
+}
+.alert {
+  margin: 7px 308px;
+}
